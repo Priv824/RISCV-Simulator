@@ -58,18 +58,18 @@ CACHE SIMULATION COMMANDS
 CACHE CONFIG FORMAT (config.txt)
 ------------------------------------------------------------
 
-<cache size in bytes>
-<block size in bytes>
-<associativity>       (1=DM, 0=FA, 2/4/8=SA)
-<replacement policy>  (FIFO, LRU, RANDOM)
-<write policy>        (WT, WB)
+    <cache size in bytes>
+    <block size in bytes>
+    <associativity>       (1=DM, 0=FA, 2/4/8=SA)
+    <replacement policy>  (FIFO, LRU, RANDOM)
+    <write policy>        (WT, WB)
 
-Example:
-256
-16
-1
-LRU
-WB
+    Example:
+    256
+    16
+    1
+    LRU
+    WB
 
 ------------------------------------------------------------
 KNOWN LIMITATIONS
@@ -94,47 +94,47 @@ TEST CASES
 
 Basic Instructions:
 -------------------
-addi x5, x5, 0
-lui x4, 16
-addi x5, x5, -1
-sd x5, 2(x4)
-addi x5, x5, 1
+    addi x5, x5, 0
+    lui x4, 16
+    addi x5, x5, -1
+    sd x5, 2(x4)
+    addi x5, x5, 1
 
 Function and Stack:
 -------------------
-main: addi x10, x0, 2
-lui sp, 80
-jal x1, fact
-beq x0, x0, exit
-fact: addi sp, sp, -16
-sd x1, 8(sp)
-sd x10, 0(sp)
-addi x5, x10, -1
-blt x0, x5, L1
-addi x10, x0, 1
-addi sp, sp, 16
-jalr x0, 0(x1)
-L1: addi x10, x10, -1
-jal x1, fact
-addi x6, x10, 0
-ld x10, 0(sp)
-ld x1, 8(sp)
-addi sp, sp, 16
-addi x20, x0, 0
-addi x8, x0, 0
-mul: add x8, x8, x6
-addi x20, x20, 1
-bne x20, x10, mul
-add x10, x8, x0
-jalr x0, 0(x1)
-exit: add x0, x0, x0
+    main: addi x10, x0, 2
+    lui sp, 80
+    jal x1, fact
+    beq x0, x0, exit
+    fact: addi sp, sp, -16
+    sd x1, 8(sp)
+    sd x10, 0(sp)
+    addi x5, x10, -1
+    blt x0, x5, L1
+    addi x10, x0, 1
+    addi sp, sp, 16
+    jalr x0, 0(x1)
+    L1: addi x10, x10, -1
+    jal x1, fact
+    addi x6, x10, 0
+    ld x10, 0(sp)
+    ld x1, 8(sp)
+    addi sp, sp, 16
+    addi x20, x0, 0
+    addi x8, x0, 0
+    mul: add x8, x8, x6
+    addi x20, x20, 1
+    bne x20, x10, mul
+    add x10, x8, x0
+    jalr x0, 0(x1)
+    exit: add x0, x0, x0
 
 Loop and Arithmetic:
 --------------------
-add x8, x8, x6
-addi x20, x20, 1
-bne x20, x10, mul
-add x10, x8, x0
+    add x8, x8, x6
+    addi x20, x20, 1
+    bne x20, x10, mul
+    add x10, x8, x0
 
 ------------------------------------------------------------
 CACHE TEST CASES
@@ -144,45 +144,45 @@ Test Case 1:
 ------------
 input.s
 -------
-.data
-.dword 10, 20, 30, 40, 50
-.text
-lui x3, 0x10
-ld x4, 0(x3)
-ld x4, 8(x3)
-ld x4, 16(x3)
-ld x4, 24(x3)
-ld x4, 32(x3)
+    .data
+    .dword 10, 20, 30, 40, 50
+    .text
+    lui x3, 0x10
+    ld x4, 0(x3)
+    ld x4, 8(x3)
+    ld x4, 16(x3)
+    ld x4, 24(x3)
+    ld x4, 32(x3)
 
 config.txt
 ----------
-256
-16
-1
-LRU
-WB
+    256
+    16
+    1
+    LRU
+    WB
 
 Test Case 2:
 ------------
 input.s
 -------
-.data
-.dword 20, 30, 40, 50, 60
-.text
-lui x3, 0x10
-sd x4, 0(x3)
-ld x4, 8(x3)
-ld x4, 0(x3)
-ld x4, 16(x3)
-ld x4, 24(x3)
+    .data
+    .dword 20, 30, 40, 50, 60
+    .text
+    lui x3, 0x10
+    sd x4, 0(x3)
+    ld x4, 8(x3)
+    ld x4, 0(x3)
+    ld x4, 16(x3)
+    ld x4, 24(x3)
 
 config.txt
 ----------
-1024
-16
-1
-FIFO
-WT
+    1024
+    16
+    1
+    FIFO
+    WT
 
 ------------------------------------------------------------
 OUTPUT FORMAT
@@ -197,8 +197,5 @@ Cache Simulation (input.output):
 R: Address: 0x20202, Set: 0x02, Miss, Tag: 0x202, Clean
 W: Address: 0x10306, Set: 0x06, Hit, Tag: 0x103, Dirty
 
-------------------------------------------------------------
-AUTHOR & CREDITS
-------------------------------------------------------------
 
 Developed as part of Lab 7 RISC-V + Cache Simulator assignment.
