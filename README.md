@@ -7,14 +7,13 @@ This project is a RISC-V 64-bit assembly simulator that includes execution suppo
 FILES
 ------------------------------------------------------------
 
-Makefile          : Automates the build and clean process.
-simulator.c       : Main C file with RISC-V and cache simulation logic.
-simulator.o       : Object file generated during compilation.
-input.s           : Sample RISC-V assembly program.
-test.txt          : Another test case file.
-input.output      : Output showing cache hit/miss data.
-myFile.txt        : Cache memory dump output.
-config.txt        : Cache configuration file.
+1. Makefile          : Automates the build and clean process.
+2. simulator.c       : Main C file with RISC-V and cache simulation logic.
+3. simulator.o       : Object file generated during compilation.
+4. input.s           : Sample RISC-V assembly program.
+5. input.output      : Output showing cache hit/miss data.
+6. myFile.txt        : Cache memory dump output.
+7. config.txt        : Cache configuration file.
 
 ------------------------------------------------------------
 COMMANDS
