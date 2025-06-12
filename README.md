@@ -33,26 +33,26 @@ Note: Ensure all files are in the same directory before building or running.
 SIMULATOR SHELL COMMANDS
 ------------------------------------------------------------
 
-load <filename>            Load and initialize a RISC-V program.
-run                        Run the loaded program until halt or breakpoint.
-regs                       Print all 64-bit register values.
-step                       Execute the next instruction.
-mem <addr> <count>         Show <count> memory values from <addr>.
-break <line>               Set a breakpoint at the given line number.
-del break <line>           Delete breakpoint from the given line.
-show-stack                 Show function call stack.
-exit                       Exit the simulator.
+    load <filename>            Load and initialize a RISC-V program.
+    run                        Run the loaded program until halt or breakpoint.
+    regs                       Print all 64-bit register values.
+    step                       Execute the next instruction.
+    mem <addr> <count>         Show <count> memory values from <addr>.
+    break <line>               Set a breakpoint at the given line number.
+    del break <line>           Delete breakpoint from the given line.
+    show-stack                 Show function call stack.
+    exit                       Exit the simulator.
 
 ------------------------------------------------------------
 CACHE SIMULATION COMMANDS
 ------------------------------------------------------------
 
-cache_sim enable <config>  Enable cache simulation with config file.
-cache_sim disable          Disable cache simulation.
-cache_sim status           Display cache settings.
-cache_sim invalidate       Invalidate all cache lines.
-cache_sim dump <file>      Dump current cache contents to file.
-cache_sim stats            Show cache hit/miss stats.
+    cache_sim enable <config>  Enable cache simulation with config file.
+    cache_sim disable          Disable cache simulation.
+    cache_sim status           Display cache settings.
+    cache_sim invalidate       Invalidate all cache lines.
+    cache_sim dump <file>      Dump current cache contents to file.
+    cache_sim stats            Show cache hit/miss stats.
 
 ------------------------------------------------------------
 CACHE CONFIG FORMAT (config.txt)
