@@ -199,3 +199,7 @@ W: Address: 0x10306, Set: 0x06, Hit, Tag: 0x103, Dirty
 
 
 Developed as part of Lab 7 RISC-V + Cache Simulator assignment.
+
+# Contributor
+@rishi
+
